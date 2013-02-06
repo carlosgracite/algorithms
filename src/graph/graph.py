@@ -6,7 +6,6 @@ class VerticeNotFoundException(BaseException):
 
 class Graph(object):
 	def __init__(self):
-		self.n = 0
 		self.edges = {}
 
 	def add_vertice(self, v):

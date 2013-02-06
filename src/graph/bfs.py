@@ -1,15 +1,15 @@
 # coding: utf-8
-from util import *
+from util import build_path
 from graph import Graph
 
 
-# Depth-first graph search
-def dfs(source, target, graph):
+# Breadth-first graph search
+def bfs(source, target, graph):
 	fringe = [source]
 	parent = {source:None}
 
 	while fringe:
-		x = fringe.pop()
+		x = fringe.pop(0)
 
 		if x == target:
 			return parent
@@ -19,3 +19,4 @@ def dfs(source, target, graph):
 				fringe.append(v)
 				parent[v] = x
 	return None
+
