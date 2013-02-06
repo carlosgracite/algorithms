@@ -1,10 +1,10 @@
 # coding: utf-8
-from util import *
+from util import build_path
 from graph import Graph
 
 
-# Depth-first graph search
 def dfs(source, target, graph):
+	""" Depth-first graph search """
 	fringe = [source]
 	parent = {source:None}
 

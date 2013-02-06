@@ -3,8 +3,8 @@ from util import build_path
 from graph import Graph
 
 
-# Breadth-first graph search
 def bfs(source, target, graph):
+	""" Breadth-first graph search """
 	fringe = [source]
 	parent = {source:None}
 
@@ -19,4 +19,3 @@ def bfs(source, target, graph):
 				fringe.append(v)
 				parent[v] = x
 	return None
-

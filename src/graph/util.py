@@ -1,4 +1,6 @@
+
 def build_path(search_tree, v):
+	""" Builds a path in a tree given the target node."""
 	if search_tree == None or search_tree == {}:
 		return []
 
