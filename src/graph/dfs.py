@@ -12,7 +12,7 @@ def dfs(source, target, graph):
 		x = fringe.pop()
 
 		if x == target:
-			return parent
+			return build_path(parent, target)
 
 		for v in graph.adj(x):
 			if v not in parent:

@@ -12,7 +12,7 @@ def bfs(source, target, graph):
 		x = fringe.pop(0)
 
 		if x == target:
-			return parent
+			return build_path(parent, target)
 
 		for v in graph.adj(x):
 			if v not in parent:

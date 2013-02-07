@@ -1,6 +1,5 @@
 from unittest import TestCase
 from bfs import *
-from util import build_path
 from graph import *
 
 class TestDFS(TestCase):
@@ -30,19 +29,18 @@ class TestDFS(TestCase):
 		self.g2.add_edge('e', 's')
 		self.g2.add_edge('e', 'g')
 
-
 	def test_path_source_dont_exist(self):
 		path = []
 		self.assertRaises(VerticeNotFoundException, bfs, 'z', 'g', self.g1)
 
 	def test_path_target_not_found1(self):
 		path = []
-		self.assertEqual(build_path(bfs('s', 'z', self.g1), 'z'), path)
+		self.assertEqual(bfs('s', 'z', self.g1), None)
 
 	def test_path_found1(self):
 		path = ['s', 'e', 'r', 'f', 'g']
-		self.assertEqual(build_path(bfs('s', 'g', self.g1), 'g'), path)
+		self.assertEqual(bfs('s', 'g', self.g1), path)
 
 	def test_path_infinite_loop(self):
 		path = ['s', 'd', 'e', 'g']
-		self.assertEqual(build_path(bfs('s', 'g', self.g2), 'g'), path)
+		self.assertEqual(bfs('s', 'g', self.g2), path)

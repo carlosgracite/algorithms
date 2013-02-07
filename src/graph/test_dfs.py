@@ -1,6 +1,5 @@
 from unittest import TestCase
 from dfs import *
-from util import build_path
 from graph import *
 
 class TestDFS(TestCase):
@@ -37,16 +36,16 @@ class TestDFS(TestCase):
 
 	def test_path_target_not_found1(self):
 		path = []
-		self.assertEqual(build_path(dfs('s', 'z', self.g1), 'z'), path)
+		self.assertEqual(dfs('s', 'z', self.g1), None)
 
 	def test_path_found1(self):
 		path = ['s', 'e', 'r', 'f', 'g']
-		self.assertEqual(build_path(dfs('s', 'g', self.g1), 'g'), path)
+		self.assertEqual(dfs('s', 'g', self.g1), path)
 
 	def test_path_found2(self):
 		path = ['s', 'e', 'h', 'q']
-		self.assertEqual(build_path(dfs('s', 'q', self.g1), 'q'), path)
+		self.assertEqual(dfs('s', 'q', self.g1), path)
 
 	def test_path_infinite_loop(self):
 		path = ['s', 'd', 'e', 'g']
-		self.assertEqual(build_path(dfs('s', 'g', self.g2), 'g'), path)
+		self.assertEqual(dfs('s', 'g', self.g2), path)
